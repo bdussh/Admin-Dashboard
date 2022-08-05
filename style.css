@@ -1,0 +1,145 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+    box-sizing: border-box;
+}
+
+:root {
+    --sidebar: #0284c7;
+    --header: #f1f5f9;
+    --content:#cbd5e1;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+  }
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #696969;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #535353;
+}
+
+body {
+    min-height: 500px;
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: minmax(180px, 1.5fr) minmax(400px, 4fr);
+    grid-template-rows: minmax(50px, 1.5fr) minmax(250px, 5fr);
+    grid-template-areas:
+    "sidebar header"
+    "sidebar content" 
+    ;
+}
+
+#sidebar {
+    background-color: var(--sidebar);
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows: minmax(70px, 8vh) minmax(20px, 50px) minmax(250px, 28vh) minmax(20px, 50px) minmax(125px, 15vh) ;
+    text-decoration: none;
+    color: #f1f5f9;
+}
+.menu_element {
+    display: flex;
+    align-items: center;
+}
+
+.menu_element>img {
+    width: 25px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(39deg) brightness(103%) contrast(102%);
+}
+
+.menu_element>a {
+    text-decoration: none;
+    color: #f1f5f9;
+    transition: font-size 0.1s;
+    position: absolute;
+    margin-left: 40px;
+}
+
+
+.menu_element>a:hover {
+    font-size: 20px;
+
+}
+
+#logo_image {
+    width: max(33px,4vw);
+}
+
+.logo{
+    grid-row: 1 / 2;
+    padding-top: 15px;
+    padding-left: 2vw;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.logo>p {
+    font-size: max(3vw, 20px);
+}
+
+#upper_menu, #bottom_menu {
+    font-size: large;
+    padding-left: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+#upper_menu {
+    grid-row: 3 / 4;
+}
+
+#bottom_menu {
+    grid-row: 5 / 6;
+}
+
+#upper_menu>div , #bottom_menu>div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#header {
+    background-color: var(--header);
+    grid-area: header;
+    
+}
+
+#content {
+    font-size: 1000px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--content);
+    grid-area: content;
+    box-shadow: inset 5px 2px 10px 0px #aaadb2;
+}
+
