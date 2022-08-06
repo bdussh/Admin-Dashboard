@@ -48,7 +48,7 @@ body {
     font-family: 'Roboto', sans-serif;
     display: grid;
     height: 100vh;
-    grid-template-columns: minmax(180px, 0.9fr) minmax(750px, 4fr);
+    grid-template-columns: minmax(195px, 0.9fr) minmax(800px, 4fr);
     grid-template-rows: minmax(140px, 1.2fr) minmax(250px, 5fr);
     grid-template-areas:
     "sidebar header"
@@ -96,7 +96,7 @@ body {
     margin-top: 10px;
     grid-row: 1 / 2;
     padding-top: 15px;
-    padding-left: 2vw;
+    padding-left: 20px;
     display: flex;
     gap: 20px;
     align-items: center;
@@ -108,7 +108,7 @@ body {
 
 #upper_menu, #bottom_menu {
     font-size: large;
-    padding-left: 3vw;
+    padding-left: 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -197,7 +197,7 @@ body {
 }
 
 .header_button {
-    width: 80px;
+    width: 100px;
     background-color: #02486c;
     border: none;
     border-radius: 15px;
@@ -225,11 +225,32 @@ body {
 }
 
 #content {
-    font-size: 1000px;
+    padding: 30px 15px 30px 25px;
+    font-size: larger;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: minmax(600px, 3fr) minmax(200px, 1fr);
+    grid-template-rows: 1fr 1fr;
     overflow-y: auto;
     overflow-x: hidden;
     background-color: var(--content);
     grid-area: content;
     box-shadow: inset 5px 2px 10px 0px #aaadb2;
+    grid-template-areas:
+    "projects announcements"
+    "projects trending" 
+    ;
+}
+
+#your_projects {
+    grid-area: projects;
+}
+
+#announcements {
+    grid-area: announcements;
+}
+
+#trending {
+    grid-area: trending;
 }
 
